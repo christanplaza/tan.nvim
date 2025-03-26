@@ -70,6 +70,11 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
+-- [[ Personal Keymaps ]]
+
+vim.keymap.set('n', '<leader>n', '<cmd>cn<CR>', { desc = 'Go to next item in Quickfix List' })
+vim.keymap.set('n', '<leader>N', '<cmd>cp<CR>', { desc = 'Go to previous item in Quickfix List' })
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
