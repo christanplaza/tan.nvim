@@ -14,6 +14,7 @@ return {
 
     -- Allows extra capabilities provided by nvim-cmp
     'hrsh7th/cmp-nvim-lsp',
+    'aca/emmet-ls',
   },
   config = function()
     vim.api.nvim_create_autocmd('LspAttach', {
@@ -155,7 +156,7 @@ return {
     --  So, we create new capabilities with nvim cmp, and then broadcast that to the servers.
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
-
+    capabilities.textDocument.completion.completionItem.snippetSupport = true
     -- Enable the following language servers
     --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
     --
@@ -185,6 +186,17 @@ return {
           server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
           require('lspconfig')[server_name].setup(server)
         end,
+      },
+    }
+    require('lspconfig').emmet_ls.setup {
+      capabilities = capabilities,
+      filetypes = { 'css', 'eruby', 'html', 'javascript', 'javascriptreact', 'typescriptreact' },
+      init_options = {
+        html = {
+          options = {
+            ['bem.enabled'] = true,
+          },
+        },
       },
     }
   end,

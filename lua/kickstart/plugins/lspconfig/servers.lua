@@ -25,6 +25,7 @@ local servers = {
   ts_ls = {},
   rust_analyzer = {},
   gopls = {},
+  prettier = {},
 }
 
 local linux_servers = {
