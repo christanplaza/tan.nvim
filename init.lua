@@ -77,10 +77,10 @@ vim.keymap.set('n', '<leader>N', '<cmd>cp<CR>', { desc = 'Go to previous item in
 vim.keymap.set('n', '<leader>td', '<cmd>TodoTelescope<CR>')
 
 -- [[ Personal Config ]]
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
+vim.o.tabstop = 2
+vim.o.shiftwidth = 2
+vim.o.smartindent = true
+vim.o.expandtab = true
 
 -- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
 -- instead raise a dialog asking if you wish to save the current file(s)
@@ -130,7 +130,7 @@ end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
-  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+  -- 'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   { -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
     opts = {
