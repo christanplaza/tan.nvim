@@ -21,7 +21,6 @@ local servers = {
   html = {},
   dockerls = {},
   docker_compose_language_service = {},
-  ts_ls = {},
   rust_analyzer = {},
   prettier = {},
 }

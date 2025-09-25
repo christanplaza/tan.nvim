@@ -1,4 +1,4 @@
--- Set <space> as the leader key
+-- Set <space> as the leader keyinit
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
@@ -421,21 +421,15 @@ require('lazy').setup({
     --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
     --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
   },
+  require 'kickstart.plugins.cmp',
   {
     'sindrets/diffview.nvim',
   },
   {
-    'hrsh7th/nvim-cmp',
-    dependencies = {
-      'hrsh7th/cmp-nvim-lsp', -- LSP source
-      'hrsh7th/cmp-buffer', -- buffer words
-      'hrsh7th/cmp-path', -- filesystem paths
-      'hrsh7th/cmp-cmdline', -- command line completions
-      'L3MON4D3/LuaSnip', -- snippet engine
-      'saadparwaiz1/cmp_luasnip', -- snippets source for cmp
-    },
+    'pmizio/typescript-tools.nvim',
+    dependencies = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
+    opts = {},
   },
-
   --
   -- require 'kickstart.plugins.debug',
   -- require 'kickstart.plugins.indent_line',
