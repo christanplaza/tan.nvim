@@ -67,7 +67,10 @@ return { -- Fuzzy Finder (files, lsp, etc)
     }
 
     -- Enable Telescope extensions if they are installed
-    pcall(require('telescope').load_extension, 'fzf')
+    if vim.fn.executable 'fzf' == 1 then
+      require('telescope').load_extension 'fzf'
+    end
+
     pcall(require('telescope').load_extension, 'ui-select')
 
     -- See `:help telescope.builtin`
