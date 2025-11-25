@@ -24,6 +24,7 @@ local servers = {
   rust_analyzer = {},
   prettier = {},
   gopls = {},
+  eslint = {},
 }
 
 local linux_servers = {
