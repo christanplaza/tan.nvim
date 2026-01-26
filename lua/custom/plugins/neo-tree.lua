@@ -12,7 +12,7 @@ return {
   },
   cmd = 'Neotree',
   keys = {
-    { '\\', ':Neotree reveal right<CR>', desc = 'NeoTree reveal', silent = true },
+    { '\\', ':Neotree reveal left<CR>', desc = 'NeoTree reveal', silent = true },
   },
   opts = {
     close_if_last_window = false,
@@ -94,7 +94,6 @@ return {
       },
     },
     window = {
-      position = 'right',
       width = 30,
       mapping_options = {
         noremap = true,

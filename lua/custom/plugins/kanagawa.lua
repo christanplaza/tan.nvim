@@ -3,6 +3,6 @@ return {
   name = 'kanagawa',
   priority = 1000,
   init = function()
-    vim.cmd.colorscheme 'kanagawa-wave'
+    vim.cmd.colorscheme 'kanagawa-dragon'
   end,
 }

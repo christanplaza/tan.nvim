@@ -23,8 +23,10 @@ local servers = {
   docker_compose_language_service = {},
   rust_analyzer = {},
   prettier = {},
-  gopls = {},
   eslint = {},
+  pyright = {},
+  pylint = {},
+  emmet_ls = {},
 }
 
 local linux_servers = {
